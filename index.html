@@ -26,12 +26,14 @@
                     <div class="d-flex flex-column mt-5">
                         <div>
                             <p class="text-light-emphasis">Projects</p>
-                            <button class="btn btn-dark w-100 d-flex align-items-center justify-content-center" data-bs-target="#exampleModal" data-bs-toggle="modal"><img src="./src/images/add.png" alt="" class="me-2">Add
+                            <button class="btn btn-dark w-100 d-flex align-items-center justify-content-center"
+                                data-bs-target="#projectModal" data-bs-toggle="modal"><img src="./src/images/add.png"
+                                    alt="" class="me-2">Add
                                 Project</button>
                         </div>
                         <div class="mt-2 d-flex flex-wrap">
                             <button class="btn border border-secodary me-2 mb-2 flex-grow-1">
-                               School
+                                School
                             </button>
                         </div>
                     </div>
@@ -43,12 +45,77 @@
                     <h2>School Tasks</h2>
                     <button class="btn btn-dark"><img src="./src/images/add.png" alt=""></button>
                 </div>
+
+                <!-- Task -->
+
+                <div class="mt-4">
+                    <div class="bg-light d-flex justify-content-between px-3 py-2 align-items-center rounded mb-2">
+
+                        <div class="d-flex align-items-center">
+                            <input type="checkbox" name="" id="task">
+                            <label for="task" class="ms-2">Incline Dumbbell Press</label>
+                        </div>
+
+                        <div class="d-flex justify-content-center align-items-center ">
+                            <p class="m-0 px-2 py-1 ms-2 bg-warning-subtle text-warning rounded"><small>Medium</small>
+                            </p>
+                            <p class="m-0 px-2 py-1 ms-2 bg-secondary-subtle text-secondary rounded"><small>Sept. 08,
+                                    2024</small></p>
+                            <i
+                                class="bi bi-three-dots-vertical px-2 py-1 ms-2 bg-secondary-subtle text-secondary rounded"></i>
+                        </div>
+
+
+                    </div>
+
+                    <div class="bg-light d-flex justify-content-between px-3 py-2 align-items-center rounded mb-2">
+
+                        <div class="d-flex align-items-center">
+                            <input type="checkbox" name="" id="task">
+                            <label for="task" class="ms-2">Incline Dumbbell Press</label>
+                        </div>
+
+                        <div class="d-flex justify-content-center align-items-center ">
+                            <p class="m-0 px-2 py-1 ms-2 bg-warning-subtle text-warning rounded"><small>Medium</small>
+                            </p>
+                            <p class="m-0 px-2 py-1 ms-2 bg-secondary-subtle text-secondary rounded"><small>Sept. 08,
+                                    2024</small></p>
+                            <i
+                                class="bi bi-three-dots-vertical px-2 py-1 ms-2 bg-secondary-subtle text-secondary rounded"></i>
+                        </div>
+
+
+                    </div>
+
+                    <div class="bg-light d-flex justify-content-between px-3 py-2 align-items-center rounded mb-2">
+
+                        <div class="d-flex align-items-center">
+                            <input type="checkbox" name="" id="task">
+                            <label for="task" class="ms-2">Incline Dumbbell Press</label>
+                        </div>
+
+                        <div class="d-flex justify-content-center align-items-center ">
+                            <p class="m-0 px-2 py-1 ms-2 bg-warning-subtle text-warning rounded"><small>Medium</small>
+                            </p>
+                            <p class="m-0 px-2 py-1 ms-2 bg-secondary-subtle text-secondary rounded"><small>Sept. 08,
+                                    2024</small></p>
+                            <i
+                                class="bi bi-three-dots-vertical px-2 py-1 ms-2 bg-secondary-subtle text-secondary rounded"></i>
+                        </div>
+
+
+                    </div>
+                </div>
+
+
+
+
             </div>
         </div>
 
-        <!-- Modal -->
+        <!-- Project Modal -->
 
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -61,20 +128,40 @@
                                 <label for="project-name">Project Name:</label>
                             </div>
                             <div class="col-auto">
-                                <input type="text" id="project-name" placeholder="..." class="ps-2">
+                                <input type="text" id="project-name"  class="ps-2">
                             </div>
 
                         </div>
 
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-dark">Save changes</button>
+                        <button type="button" class="btn btn-dark">Save</button>
                     </div>
                 </div>
             </div>
         </div>
 
     </div>
+
+    <!-- Task Modal -->
+
+    <div class="modal" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Modal title</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>Modal body text goes here.</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
 
 
 </body>

@@ -31,7 +31,7 @@
                                     alt="" class="me-2">Add
                                 Project</button>
                         </div>
-                        <div class="mt-2 d-flex flex-wrap">
+                        <div class="mt-2 d-flex flex-wrap" id="button-container">
                             <button class="btn border border-secodary me-2 mb-2 flex-grow-1">
                                 School
                             </button>
@@ -43,7 +43,8 @@
             <div class="col vh-100 ms-4 ">
                 <div class="d-flex justify-content-between w-100 mt-5">
                     <h2>School Tasks</h2>
-                    <button class="btn btn-dark"><img src="./src/images/add.png" alt=""></button>
+                    <button class="btn btn-dark"><img src="./src/images/add.png" alt="" data-bs-toggle="modal"
+                            data-bs-target="#todo-modal"></button>
                 </div>
 
                 <!-- Task -->
@@ -128,14 +129,14 @@
                                 <label for="project-name">Project Name:</label>
                             </div>
                             <div class="col-auto">
-                                <input type="text" id="project-name"  class="ps-2">
+                                <input type="text" id="project-name" class="ps-2">
                             </div>
 
                         </div>
 
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-dark">Save</button>
+                        <button type="button" class="btn btn-dark" id="save-project" data-bs-dismiss="modal">Save</button>
                     </div>
                 </div>
             </div>
@@ -145,23 +146,64 @@
 
     <!-- Task Modal -->
 
-    <div class="modal" tabindex="-1">
+    <div class="modal fade" tabindex="-1" id="todo-modal">
         <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title">Modal title</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Add ToDo Task</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row mb-2">
+                        <div class="col-auto">
+                            <label for="todo-name"><small>Name:</small></label>
+                        </div>
+                        <div class="col-auto">
+                            <input type="text" id="todo-name" class="form-control">
+
+                        </div>
+
+                    </div>
+
+                    <div class="row d-flex align-items-center">
+
+                        <div class="col">
+                            <div class="col-auto ">
+                                <label for="todo-date"><small>Date:</small></label>
+                            </div>
+                            <div class="col-auto">
+                                <input type="date" id="todo-date" class="form-control">
+
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="col-auto">
+                                <label for="dropdown"><small>Difficulty</small>:</label>
+                            </div>
+
+                            <div class="col-auto">
+                                <div class="btn-group">
+                                    <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                      Small button
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                      ...
+                                    </ul>
+                                  </div>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-dark">Save</button>
+                </div>
             </div>
-            <div class="modal-body">
-              <p>Modal body text goes here.</p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-          </div>
         </div>
-      </div>
+    </div>
 
 
 </body>

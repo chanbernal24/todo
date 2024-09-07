@@ -1,7 +1,9 @@
 import ProjectButton from "../components/Project_Button_Component"
 
 class ProjectButtonController {
-    projectButtonsArray = []
+    projectButtonsArray = [
+        new ProjectButton("Default Project")
+    ]
 
     addProject = (name) => {
         const newProjectButton = new ProjectButton(name)

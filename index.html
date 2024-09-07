@@ -49,7 +49,7 @@
 
                 <!-- Task -->
 
-                <div class="mt-4">
+                <div class="mt-4" id="tasks-container">
                     <div class="bg-light d-flex justify-content-between px-3 py-2 align-items-center rounded mb-2">
 
                         <div class="d-flex align-items-center">
@@ -61,13 +61,23 @@
                             <p class="m-0 px-2 py-1 ms-2 bg-warning-subtle text-warning rounded"><small>Medium</small>
                             </p>
                             <p class="m-0 px-2 py-1 ms-2 bg-secondary-subtle text-secondary rounded"><small>Sept. 08,
-                                    2024</small></p>
-                            <i
-                                class="bi bi-three-dots-vertical px-2 py-1 ms-2 bg-secondary-subtle text-secondary rounded"></i>
+                                    2024</small>
+                            </p>
+                            <a tabindex="0" data-bs-trigger="focus" id="details" class="m-0 px-2 py-1 ms-2 btn btn-secondary-subtle"
+                                data-bs-toggle="popover">
+                                <i class="bi bi-three-dots-vertical text-secondary"></i>
+                        </a>
+
+
                         </div>
 
 
                     </div>
+                    <!-- popover -->
+                    <!-- <div id="popover-form">
+                        <button class="btn m-0"><i class="bi bi-pencil-square"></i></button>
+                        <button class="btn m-0"><i class="bi bi-trash3-fill"></i></i></button>
+                    </div> -->
 
                     <div class="bg-light d-flex justify-content-between px-3 py-2 align-items-center rounded mb-2">
 
@@ -136,7 +146,8 @@
 
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-dark" id="save-project" data-bs-dismiss="modal">Save</button>
+                        <button type="button" class="btn btn-dark w-100" id="save-project"
+                            data-bs-dismiss="modal">Save</button>
                     </div>
                 </div>
             </div>
@@ -183,14 +194,11 @@
                             </div>
 
                             <div class="col-auto">
-                                <div class="btn-group">
-                                    <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                      Small button
-                                    </button>
-                                    <ul class="dropdown-menu">
-                                      ...
-                                    </ul>
-                                  </div>
+                                <select class="form-select">
+                                    <option selected value="easy">Easy</option>
+                                    <option value="medium">Medium</option>
+                                    <option value="hard">Hard</option>
+                                </select>
                             </div>
 
                         </div>
@@ -199,7 +207,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-dark">Save</button>
+                    <button type="button" class="btn btn-dark w-100">Save</button>
                 </div>
             </div>
         </div>

@@ -33,22 +33,17 @@ $(document).ready(function () {
 });
 
 
-window.addEventListener('load', () => {
-    projectButtonController.removeNodesInsideButtonContainerThenRender()
-})
+
+
+// window.localStorage.clear()
 
 let projectButtonController = new ProjectButtonController()
 
-console.log("Hello Worldssss!");
 
-const saveProject = document.querySelector('#save-project')
-saveProject.addEventListener('click', () => {
-    let projectName = document.querySelector('#project-name')
-    projectButtonController.addProject(projectName.value)
-    projectButtonController.removeNodesInsideButtonContainerThenRender()
-    projectName.value = ""
-})
+console.log(projectButtonController);
 
-const tricepPushDown = new TaskComponent("Tricep", "Hard", "Sept 24, 2024", false)
 
-tasksContainer.appendChild(tricepPushDown.renderTaskComponent())
+
+// const tricepPushDown = new TaskComponent("Tricep", "Hard", "Sept 24, 2024", false)
+
+// tasksContainer.appendChild(tricepPushDown.renderTaskComponent())

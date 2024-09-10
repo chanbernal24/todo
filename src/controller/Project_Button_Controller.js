@@ -1,34 +1,39 @@
-import ProjectButton from "../components/Project_Button_Component"
+import ProjectButtonModel from "../models/ProjectButton_Model"
 
 class ProjectButtonController {
-    projectButtonsArray = [
-        new ProjectButton("Default Project")
-    ]
-
-    addProject = (name) => {
-        const newProjectButton = new ProjectButton(name)
-        this.projectButtonsArray.push(newProjectButton)
+    constructor() {
+        this.saveProject(),
+            this.renderDefaultButton()
     }
 
-    renderButtons = () => {
-        const buttonContainer = document.querySelector('#button-container');
+    projectButtonModel = new ProjectButtonModel();
 
-        this.projectButtonsArray.map(projectButton => {
-            const buttonNode = projectButton.renderProjectButton()
+    renderDefaultButton = () => {
+        window.addEventListener('load', () => {
+            if (this.projectButtonModel.isFirstTimeOpeningTheApp) {
+                this.projectButtonModel.addButtonNameToLocalStorage("Default Project")
+            } else {
+                this.projectButtonModel.removeNodesInsideButtonContainerThenRender()
 
-            buttonContainer.appendChild(buttonNode)
-
+            }
+            
         })
     }
 
-    removeNodesInsideButtonContainerThenRender = () => {
-        const buttonContainer = document.querySelector('#button-container');
-        while(buttonContainer.firstChild) {
-            buttonContainer.removeChild(buttonContainer.lastChild)
-        }
 
-        this.renderButtons()
+    saveProject = () => {
+        let saveProjectButton = document.querySelector('#save-project')
+        saveProjectButton.addEventListener('click', () => {
+            let projectName = document.querySelector('#project-name')
+            this.projectButtonModel.addProject(projectName.value)
+            this.projectButtonModel.removeNodesInsideButtonContainerThenRender()
+            this.projectButtonModel.addButtonNameToLocalStorage(projectName.value)
+
+
+            projectName.value = ""
+        })
     }
+
 }
 
 export default ProjectButtonController

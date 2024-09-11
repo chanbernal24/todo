@@ -10,14 +10,17 @@ class ProjectButtonController {
 
     renderDefaultButton = () => {
         window.addEventListener('load', () => {
-            if (this.projectButtonModel.isFirstTimeOpeningTheApp) {
-                this.projectButtonModel.addButtonNameToLocalStorage("Default Project")
+            if (this.projectButtonModel.isFirstTimeOpeningTheApp()) {
+                console.log("First time opening the app");
+                // Add the default project
+                this.projectButtonModel.addButtonNameToLocalStorage("Default Project");
+                this.projectButtonModel.renderButtons()
             } else {
-                this.projectButtonModel.removeNodesInsideButtonContainerThenRender()
+                console.log("Not the first time");
+                this.projectButtonModel.update();
 
             }
-            
-        })
+        });
     }
 
 
@@ -26,8 +29,8 @@ class ProjectButtonController {
         saveProjectButton.addEventListener('click', () => {
             let projectName = document.querySelector('#project-name')
             this.projectButtonModel.addProject(projectName.value)
-            this.projectButtonModel.removeNodesInsideButtonContainerThenRender()
             this.projectButtonModel.addButtonNameToLocalStorage(projectName.value)
+            this.projectButtonModel.update()
 
 
             projectName.value = ""

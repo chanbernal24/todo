@@ -35,12 +35,12 @@ $(document).ready(function () {
 
 
 
-// window.localStorage.clear()
+window.localStorage.clear()
 
 let projectButtonController = new ProjectButtonController()
 
 
-console.log(projectButtonController);
+// console.log(projectButtonController);
 
 
 

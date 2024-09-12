@@ -1,11 +1,9 @@
 import './styles.css'
 import './/scss/styles.scss'
 import * as bootstrap from 'bootstrap'
-import { Modal } from 'bootstrap'
 import "bootstrap-icons/font/bootstrap-icons.css";
-import ProjectButton from './components/Project_Button_Component.js';
 import ProjectButtonController from './controller/Project_Button_Controller.js';
-import TaskComponent from './components/Task_Component.js';
+import TaskController from './controller/Task_Controller.js';
 
 var $ = require("jquery")
 
@@ -38,7 +36,6 @@ $(document).ready(function () {
 // window.localStorage.clear()
 
 let projectButtonController = new ProjectButtonController()
-
 
 // console.log(projectButtonController);
 

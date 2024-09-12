@@ -17,6 +17,8 @@ class ProjectButtonController {
                 this.projectButtonModel.renderButtons()
             } else {
                 console.log("Not the first time");
+                this.projectButtonModel.renderButtons()
+
                 this.projectButtonModel.update();
 
             }
@@ -31,6 +33,7 @@ class ProjectButtonController {
             this.projectButtonModel.addProject(projectName.value)
             this.projectButtonModel.addButtonNameToLocalStorage(projectName.value)
             this.projectButtonModel.update()
+            // console.log(this.projectButtonModel.projectButtonsArray)
 
 
             projectName.value = ""

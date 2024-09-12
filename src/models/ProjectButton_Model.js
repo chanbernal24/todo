@@ -4,9 +4,7 @@ import TaskComponent from "../components/Task_Component"
 class ProjectButtonModel {
 
     // array of PROJECT BUTTONS
-    projectButtonsArray = [
-        
-    ]
+    projectButtonsArray = []
 
     isFirstTimeOpeningTheApp = () => {
         let localStorages = window.localStorage
@@ -29,6 +27,7 @@ class ProjectButtonModel {
         projectButtonsArray.map(button => {
             this.projectButtonsArray.push(button)
         })
+        this.projectButtonsArray = projectButtonsArray
 
         let obj = JSON.stringify(projectButtonsArray)
 
@@ -50,7 +49,8 @@ class ProjectButtonModel {
 
     renderButtons = () => {
         const buttonContainer = document.querySelector('#button-container');
-
+        let storedProjects = JSON.parse(window.localStorage.getItem("projectButtons")) 
+        this.projectButtonsArray = storedProjects
         
         // let localStorages = window.localStorage
         // let projectButtonsArray = localStorages.getItem("projectButtons")

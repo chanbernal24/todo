@@ -4,11 +4,18 @@ import TaskModel from "../models/Task_Model"
 class TaskController {
     constructor() {
         this.changeProjectTitle(),
-        this.saveTask()
+        this.saveTask(),
+        this.renderTasksLoad()
     }
 
     taskModel = new TaskModel()
     projectButtonModel = new ProjectButtonModel()
+
+    renderTasksLoad = () => {
+        window.addEventListener('load', () => {
+            this.taskModel.renderTasks()
+        })
+    }
 
     changeProjectTitle = () => {
         let projectTitle = document.querySelector('#project-title');
@@ -40,7 +47,6 @@ class TaskController {
 
         taskSaveButton.addEventListener('click', () => {
             this.taskModel.addTaskToLocalStorage(taskName.value, taskDifficulty.value, taskDueDate.value, false)
-            this.projectButtonModel.addTaskToProject(projectTitle, taskName.value, taskDifficulty.value, taskDueDate.value, false)
         })
 
         

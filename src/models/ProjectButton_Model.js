@@ -34,12 +34,6 @@ class ProjectButtonModel {
         localStorages.setItem("projectButtons", obj)
     }
 
-    addProject = (name) => {
-        const newProjectButton = new ProjectButton(name)
-        this.projectButtonsArray.push(newProjectButton)
-        // console.log(this.projectButtonsArray)
-    }
-
     addTaskToProject = (projectName, taskName, taskDifficulty, taskDueDate, taskIsDone) => {
         const project = this.projectButtonsArray.find(projectButon => projectButon.name === projectName)
         if (project) {

@@ -19,6 +19,7 @@ class ProjectButtonController {
                 this.projectButtonModel.addButtonNameToLocalStorage("Default Project");
                 this.projectButtonModel.renderButtons()
                 this.taskController.changeProjectTitle()
+                this.projectButtonModel.projectButtonsArray
             } else {
                 console.log("NOT the first time opening the app")
 
@@ -26,6 +27,7 @@ class ProjectButtonController {
 
                 this.projectButtonModel.update();
                 this.taskController.changeProjectTitle()
+                console.log(this.projectButtonModel.projectButtonsArray)
 
 
             }

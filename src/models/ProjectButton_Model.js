@@ -2,6 +2,9 @@ import ProjectButton from "../components/Project_Button_Component"
 import TaskComponent from "../components/Task_Component"
 
 class ProjectButtonModel {
+    constructor() {
+        this.projectButtonsArray = this.loadButtonsFromLocalStorage() || [];
+    }
 
     // array of PROJECT BUTTONS
     projectButtonsArray = []
@@ -14,6 +17,15 @@ class ProjectButtonModel {
         // if first time opening the web
         return storedProjects ? false : true
 
+    }
+
+    updateLocalStorage = () => {
+        window.localStorage.setItem('projectButtons', JSON.stringify(this.projectButtonsArray))
+    }
+
+    loadButtonsFromLocalStorage = () => {
+        const buttons = window.localStorage.getItem('projectButtons')
+        return buttons ? JSON.parse(buttons) : []
     }
 
     addButtonNameToLocalStorage = (buttonName) => {
@@ -30,8 +42,10 @@ class ProjectButtonModel {
         this.projectButtonsArray = projectButtonsArray
 
         let obj = JSON.stringify(projectButtonsArray)
+        this.updateLocalStorage()
+        console.log(this.projectButtonsArray)
 
-        localStorages.setItem("projectButtons", obj)
+
     }
 
     addTaskToProject = (projectName, taskName, taskDifficulty, taskDueDate, taskIsDone) => {

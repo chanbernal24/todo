@@ -23,7 +23,7 @@ class TaskModel {
 
         let obj = JSON.stringify(projects)
         window.localStorage.setItem('projectButtons', obj)
-        console.log(projects[0]['name'] === projectTitle)
+        // console.log(projects[0]['name'] === projectTitle)
     }
 
     renderTasks = () => {

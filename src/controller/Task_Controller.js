@@ -28,6 +28,8 @@ class TaskController {
             buttonsArray.forEach(button => {
                 button.addEventListener('click', () => {
                     projectTitle.textContent = button.textContent;
+                    console.log(this.projectButtonModel.projectButtonsArray)
+
                 });
             });
         } else if (this.projectButtonModel.isFirstTimeOpeningTheApp()) {
@@ -40,13 +42,24 @@ class TaskController {
     saveTask = () => {
         let projectTitle = document.querySelector('#project-title');
 
+        const tasksContainer = document.querySelector('#tasks-container');
+
         let taskSaveButton = document.querySelector('#task-save-button')
         let taskName = document.querySelector('#todo-name')
         let taskDueDate = document.querySelector('#todo-date')
         let taskDifficulty = document.querySelector('#todo-difficulty')
 
+        
+
         taskSaveButton.addEventListener('click', () => {
             this.taskModel.addTaskToLocalStorage(taskName.value, taskDifficulty.value, taskDueDate.value, false)
+            // this.projectButtonModel.updateLocalStorage()
+            while (tasksContainer.firstChild) {
+                tasksContainer.removeChild(tasksContainer.lastChild)
+            }
+            this.taskModel.renderTasks()
+            console.log(this.projectButtonModel.projectButtonsArray)
+
         })
 
         
